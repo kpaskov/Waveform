@@ -7,6 +7,6 @@ for i=1:size(match_data, 1)
     record_id = record_id{1};
     disp(record_id);
 
-    pull_data(record_id, directory);
+    get_record_data(record_id, directory);
 end
 

@@ -1,4 +1,4 @@
-function [ ] = pull_data( record_id, directory )
+function [ ] = pull_record_data( record_id, directory )
 %Pulls alarm data for a record and writes it to matlab files in given
 %directory.
 
