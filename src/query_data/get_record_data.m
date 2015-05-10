@@ -1,6 +1,5 @@
-function [ ] = pull_record_data( record_id, directory )
-%Pulls alarm data for a record and writes it to matlab files in given
-%directory.
+function [ ] = get_record_data( record_id, directory )
+%Pulls alarm data for a record and writes it to matlab files in given directory.
 
 %Record url for physionet
 record_location = strcat('mimic2db/', record_id, '/', record_id);
