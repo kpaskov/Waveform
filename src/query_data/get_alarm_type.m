@@ -1,3 +1,5 @@
+% Author: Kelley Paskov
+
 function [ alarm_type ] = get_alarm_type( comment )
 %Converts a physionet comment to an alarm type
 

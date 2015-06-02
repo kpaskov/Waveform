@@ -4,6 +4,12 @@ import os
 
 __author__ = 'kelley'
 
+'''
+This script generates a training/testing split such that no individual has a record in both the training
+and the testing datasets. Since samples are labeled by record, I needed to pull in external information
+to determine whether or not two records came from the same individual.
+'''
+
 directory = '/Users/kelley/Data/Waveform/MIMICII_Sampled'
 
 record_to_patient = dict()

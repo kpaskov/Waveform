@@ -1,3 +1,5 @@
+% Author: Kelley Paskov
+
 function [ ] = get_record_data( record_id, directory )
 %Pulls alarm data for a record and writes it to matlab files in given directory.
 
@@ -7,7 +9,7 @@ record_location = strcat('mimic2db/', record_id, '/', record_id);
 %Get alarm annotations
 [alarm_sample_indices, ~, ~, ~, ~, alarm_comments]=rdann(record_location,'alarms');
 try
-    [expert_sample_indices]=rdann(record_location,'alM');
+    [expert_sample_indices, ~, ~, ~, ~, ~]=rdann(record_location,'alM');
 catch
     expert_sample_indices = [];
 end
@@ -35,7 +37,7 @@ for i=1:size(alarm_sample_indices, 1)
             fid = fopen(strcat(directory, record_id, 'm_', num2str(i), '.hea'), 'a+');
             fprintf(fid, '#%s\n', alarm_type);
             alarm_value = '0';
-            if isempty(find(expert_sample_indices, alarm_signal_index))
+            if sum(expert_sample_indices == alarm_signal_index) == 0
                 fprintf(fid, '#False alarm\n');
             else
                 fprintf(fid, '#True alarm\n');

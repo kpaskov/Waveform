@@ -4,6 +4,10 @@ import os
 
 __author__ = 'kelley'
 
+'''
+This file selects samples from the MIMICII data in such a way that no more than three alarms of a given
+type are taken from the same record.
+'''
 mimic_directory = '/Users/kelley/Data/Waveform/MIMICII'
 new_directory = '/Users/kelley/Data/Waveform/MIMICII_Sampled'
 

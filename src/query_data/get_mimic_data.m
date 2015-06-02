@@ -1,3 +1,7 @@
+% Author: Kelley Paskov
+% This script collects waveform data from MIMICII and saves it to .mat and .hea files in the same
+% format as the Cardiology Challenge Data
+
 directory = '/Users/kelley/Data/Waveform/MIMICII/';
 match_data = load('Mimic2dbMAP.mat');
 match_data = match_data.Mimic2dbMAP;
